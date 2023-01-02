@@ -13,13 +13,13 @@ class TestForwardIndex(unittest.TestCase):
     def test_forward_index_multiple_words(self):
         text = 'For most seagulls life consists simply of eating and surviving'
         result = forward_index.generate_forward_index(text)
-        self.assertEqual(result, ['for', 'most', 'seagulls', 'life', 'consists', 'simply', 'of', 'eating', 'and',
-                                  'surviving'])
+        self.assertEqual(['and', 'consists', 'eating', 'for', 'life', 'most', 'of', 'seagulls', 'simply', 'surviving'],
+                         result)
 
     def test_forward_index_with_duplicates(self):
         text = 'Jonathan nodded obediently to Jonathan'
         result = forward_index.generate_forward_index(text)
-        self.assertEqual(result, ['Jonathan', 'nodded', 'obediently', 'to'])
+        self.assertEqual(result, ['jonathan', 'nodded', 'obediently', 'to'])
 
     def test_forward_index_empty(self):
         text = ''
